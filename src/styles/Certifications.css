@@ -1,0 +1,188 @@
+.certifications {
+  background: #0d1a12;
+  padding: 3rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px #00ff5a11;
+  border: 1.5px solid #00ff5a33;
+  color: #caffd0;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff5a, transparent);
+}
+
+.certifications h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #00ff5a;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.certifications h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff5a, transparent);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.certification-category {
+  background: rgba(13, 26, 18, 0.8);
+  padding: 1.8rem;
+  border-radius: 14px;
+  border: 1px solid #00ff5a22;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.certification-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff5a, transparent);
+}
+
+.certification-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px #00ff5a22;
+  border-color: #00ff5a55;
+}
+
+.certification-category h3 {
+  color: #00ff5a;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.certification-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #00ff5a;
+}
+
+.certification-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certification-category li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #caffd0;
+}
+
+.certification-category li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #00ff5a;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.credly-profile-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.certification-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  color: #00ff5a;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #00ff5a55;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.certification-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 90, 0.1), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.certification-link:hover {
+  color: #050c08;
+  background: #00ff5a;
+  box-shadow: 0 0 15px #00ff5a88;
+  border-color: #00ff5a;
+  transform: translateY(-2px);
+}
+
+.certification-link:hover::before {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    padding: 2rem 1rem;
+  }
+  
+  .certifications h2 {
+    font-size: 1.8rem;
+  }
+  
+  .certification-category {
+    padding: 1.5rem;
+  }
+}

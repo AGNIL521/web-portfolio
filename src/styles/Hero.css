@@ -1,0 +1,144 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(120deg, #050c08 0%, #0d1a12 100%);
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: radial-gradient(circle at 20% 40%, #00ffea44 0%, transparent 80%),
+              radial-gradient(circle at 80% 60%, #39ff1444 0%, transparent 80%);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #e6f7ff;
+}
+
+.hero__profile-cyber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.hero__profile-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ff5a;
+  box-shadow: 0 0 15px #00ff5a66, 0 0 0 5px #050c08;
+  background: #050c08;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__cyber-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__cyber-svg {
+  filter: drop-shadow(0 0 16px #00ff5a88);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #00ff5a;
+}
+.hero h2 {
+  font-size: 1.5rem;
+  color: #0077ff;
+  margin-bottom: 1rem;
+}
+.hero__cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #00ff5a;
+  color: #050c08;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 12px #00ff5a44, 0 0 8px #00ff5a99;
+}
+.hero__cta:hover {
+  background: #39ff14;
+  color: #050c08;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero__content {
+    padding: 0 0.5rem;
+  }
+  .hero__profile-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.hero__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero h2 {
+  font-size: 1.5rem;
+  color: #0077ff;
+  margin-bottom: 1rem;
+}
+.hero__cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.hero__cta:hover {
+  background: #005fcc;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero__content {
+    padding: 0 0.5rem;
+  }
+}

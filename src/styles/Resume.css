@@ -1,0 +1,117 @@
+.resume {
+  background: #0d1a12;
+  padding: 3rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px #00ff5a11;
+  border: 1.5px solid #00ff5a33;
+  color: #caffd0;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ff5a, transparent);
+}
+
+.resume h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #00ff5a;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.resume h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff5a, transparent);
+}
+
+.resume__section {
+  margin-bottom: 3rem;
+  background: rgba(13, 26, 18, 0.5);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid #00ff5a22;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.resume__section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px #00ff5a15;
+  border-color: #00ff5a55;
+}
+
+.resume__section h3 {
+  color: #00ff5a;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.resume__section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #00ff5a;
+}
+
+.resume__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+  padding: 0;
+}
+
+.resume__skills li {
+  background: #00ffea22;
+  color: #00ffea;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 8px #00ffea44;
+}
+
+.resume__download {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.resume__download:hover {
+  background: #005fcc;
+}
+
+@media (max-width: 600px) {
+  .resume {
+    padding: 1rem 0.5rem;
+  }
+}
