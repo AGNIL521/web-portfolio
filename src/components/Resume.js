@@ -63,7 +63,15 @@ const Resume = () => (
         <li>Access Controls</li>
       </ul>
     </div>
-    <a href="/assets/ILYASS_AGNAOU-RESUME-ENG.pdf" download className="resume">Download Full Resume (PDF)</a>
+    <div className="resume__actions">
+      <a 
+        href="/assets/ILYASS_AGNAOU-RESUME-ENG.pdf" 
+        download="Ilyass_Agnaou_Resume.pdf"
+        className="btn btn-primary"
+      >
+        <i className="fas fa-download"></i> Download Full Resume (PDF)
+      </a>
+    </div>
   </section>
 );
 

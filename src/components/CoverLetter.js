@@ -1,9 +1,76 @@
-import React, { useState } from 'react';
-import { FaFileAlt, FaBriefcase, FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react';
+import { FaFileAlt, FaBriefcase, FaExternalLinkAlt, FaDownload, FaPrint, FaFilePdf, FaFileAlt as FaFileText } from 'react-icons/fa';
+import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 import '../styles/CoverLetter.css';
 
+// PDF Document Component
+const MyDocument = ({ content }) => (
+  <Document>
+    <Page style={styles.page}>
+      <View style={styles.section}>
+        <Text style={styles.text}>
+          {content}
+        </Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+// PDF Styles
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    padding: 40,
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+  text: {
+    fontSize: 12,
+    fontFamily: 'Helvetica',
+    lineHeight: 1.5,
+    whiteSpace: 'pre-wrap',
+  },
+});
+
 const CoverLetter = () => {
-  const [activeTab, setActiveTab] = useState('cover');
+  const [activeTab, setActiveTab] = useState('cover-letter');
+  const [isClient, setIsClient] = useState(false);
+  const coverLetterRef = useRef(null);
+  const jobDescriptionRef = useRef(null);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handlePrint = () => {
+    const content = activeTab === 'cover-letter' ? coverLetter : jobDescription;
+    const printWindow = window.open('', '', 'width=800,height=600');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>${activeTab === 'cover-letter' ? 'Cover Letter' : 'Job Description'}</title>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; white-space: pre-wrap; }
+            @media print { 
+              @page { margin: 1cm; }
+              body { padding: 0; }
+            }
+          </style>
+        </head>
+        <body>${content.replace(/\n/g, '<br>')}</body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+      printWindow.print();
+      printWindow.close();
+    }, 500);
+  };
   
   // Sample job description - replace with actual job details
   const jobDescription = `
@@ -69,47 +136,66 @@ LinkedIn: linkedin.com/in/ilyass-agnaou
     <section id="cover-letter" className="cover-letter-section">
       <div className="container">
         <h2 className="section-title">Cover Letter & Job Application</h2>
+        <p className="section-subtitle">Tailored application materials for the SOC Analyst position at PwC</p>
+        
         <div className="cover-letter-tabs">
           <button 
             className={`tab-btn ${activeTab === 'cover-letter' ? 'active' : ''}`}
             onClick={() => setActiveTab('cover-letter')}
+            aria-selected={activeTab === 'cover-letter'}
+            aria-controls="cover-letter-content"
           >
-            Cover Letter
+            <FaFileAlt className="tab-icon" /> Cover Letter
           </button>
           <button 
             className={`tab-btn ${activeTab === 'job-description' ? 'active' : ''}`}
             onClick={() => setActiveTab('job-description')}
+            aria-selected={activeTab === 'job-description'}
+            aria-controls="job-description-content"
           >
-            Job Description
+            <FaBriefcase className="tab-icon" /> Job Description
           </button>
         </div>
         
-        <div className="cover-letter-content">
-          {activeTab === 'cover-letter' ? (
-            <div className="cover-letter">
-              <div className="cover-letter-text">
+        <div className="tab-content">
+          <div 
+            id="cover-letter-content"
+            role="tabpanel"
+            aria-labelledby="cover-letter-tab"
+            className={`tab-pane ${activeTab === 'cover-letter' ? 'active' : ''}`}
+            ref={coverLetterRef}
+          >
+            <div className="document-content">
+              <div className="document-text">
                 {coverLetter.split('\n').map((line, index) => (
-                  <p key={index} className="cover-letter-line">
+                  <p key={index} className={line.trim() === '' ? 'empty-line' : ''}>
                     {line || <br />}
                   </p>
                 ))}
               </div>
-              <div className="cover-letter-actions">
-                <a 
-                  href="#" 
+              <div className="document-actions">
+                <button 
                   className="btn btn-primary"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.print();
-                  }}
+                  onClick={handlePrint}
                 >
-                  Print or Save as PDF
-                </a>
-                <a 
-                  href="#" 
+                  <FaPrint /> Print
+                </button>
+                {isClient && (
+                  <PDFDownloadLink
+                    document={<MyDocument content={coverLetter} />}
+                    fileName="Ilyass_Agnaou_Cover_Letter.pdf" 
+                    className="btn btn-secondary"
+                  >
+                    {({ blob, url, loading, error }) => (
+                      <span>
+                        {loading ? 'Generating PDF...' : <><FaFilePdf /> Save as PDF</>}
+                      </span>
+                    )}
+                  </PDFDownloadLink>
+                )}
+                <button 
                   className="btn btn-outline"
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     const blob = new Blob([coverLetter], { type: 'text/plain' });
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement('a');
@@ -120,38 +206,75 @@ LinkedIn: linkedin.com/in/ilyass-agnaou
                     document.body.removeChild(a);
                   }}
                 >
-                  Download as TXT
-                </a>
+                  <FaFileText /> Download as TXT
+                </button>
               </div>
             </div>
-          ) : (
-            <div className="job-description">
-              <div className="job-description-text">
+          </div>
+
+          <div 
+            id="job-description-content"
+            role="tabpanel"
+            aria-labelledby="job-description-tab"
+            className={`tab-pane ${activeTab === 'job-description' ? 'active' : ''}`}
+            ref={jobDescriptionRef}
+          >
+            <div className="document-content">
+              <div className="document-text">
+                <h3 className="job-title">SOC Analyst N1 - PwC Morocco</h3>
                 {jobDescription.split('\n').map((line, index) => (
-                  <p key={index} className={line.trim() === '' ? 'job-line-spacing' : ''}>
+                  <p key={index} className={line.trim() === '' ? 'empty-line' : ''}>
                     {line || <br />}
                   </p>
                 ))}
               </div>
-              <div className="job-actions">
+              <div className="document-actions">
                 <a 
-                  href="mailto:recruitment@example.com?subject=Application for SOC Analyst N1 Position" 
+                  href="mailto:recruitment@pwc.ma?subject=Application for SOC Analyst N1 Position" 
                   className="btn btn-primary"
                 >
-                  Apply Now <FaExternalLinkAlt className="icon-right" />
+                  <FaExternalLinkAlt /> Apply Now
                 </a>
+                <button 
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    const savedJobs = JSON.parse(localStorage.getItem('savedJobs') || '[]');
+                    const job = {
+                      id: 'pwc-soc-analyst-2024',
+                      title: 'SOC Analyst N1',
+                      company: 'PwC Morocco',
+                      date: new Date().toISOString(),
+                      description: jobDescription
+                    };
+                    if (!savedJobs.some(j => j.id === job.id)) {
+                      savedJobs.push(job);
+                      localStorage.setItem('savedJobs', JSON.stringify(savedJobs));
+                      alert('Job saved successfully!');
+                    } else {
+                      alert('This job is already saved.');
+                    }
+                  }}
+                >
+                  <FaDownload /> Save for Later
+                </button>
                 <button 
                   className="btn btn-outline"
                   onClick={() => {
-                    // Save job to localStorage or implement your save functionality
-                    alert('Job saved for later!');
+                    const blob = new Blob([jobDescription], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'PwC_SOC_Analyst_Job_Description.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
                   }}
                 >
-                  Save for Later
+                  <FaFileText /> Save as TXT
                 </button>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </section>
