@@ -1,0 +1,111 @@
+/* Hidden Job Market Section */
+.hidden-job-market {
+  padding: 6rem 0;
+  background-color: #0a192f;
+  color: #e6f1ff;
+}
+
+.hidden-job-content {
+  margin-top: 3rem;
+}
+
+.strategy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.strategy-card {
+  background: #112240;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #1e2a47;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.strategy-icon {
+  font-size: 2.5rem;
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+}
+
+.strategy-card h3 {
+  color: #ccd6f6;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.strategy-card p {
+  color: #a8b2d1;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.networking-tips {
+  background: #112240;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #1e2a47;
+}
+
+.networking-tips h3 {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.networking-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.networking-tips li {
+  color: #a8b2d1;
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.networking-tips li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #64ffda;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .strategy-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .networking-tips ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hidden-job-market {
+    padding: 4rem 0;
+  }
+  
+  .strategy-card,
+  .networking-tips {
+    padding: 1.5rem;
+  }
+}

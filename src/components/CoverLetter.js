@@ -196,14 +196,22 @@ LinkedIn: linkedin.com/in/ilyass-agnaou
                 <button 
                   className="btn btn-outline"
                   onClick={() => {
-                    const blob = new Blob([coverLetter], { type: 'text/plain' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Ilyass_Agnaou_Cover_Letter.txt';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
+                    try {
+                      const blob = new Blob([coverLetter], { type: 'text/plain;charset=utf-8' });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = 'Ilyass_Agnaou_Cover_Letter.txt';
+                      document.body.appendChild(a);
+                      a.click();
+                      setTimeout(() => {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                      }, 0);
+                    } catch (error) {
+                      console.error('Error downloading file:', error);
+                      alert('Failed to download the cover letter. Please try again.');
+                    }
                   }}
                 >
                   <FaFileText /> Download as TXT

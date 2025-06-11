@@ -64,13 +64,19 @@ const Resume = () => (
       </ul>
     </div>
     <div className="resume__actions">
-      <a 
-        href="/assets/ILYASS_AGNAOU-RESUME-ENG.pdf" 
-        download="Ilyass_Agnaou_Resume.pdf"
+      <button 
+        onClick={() => {
+          const link = document.createElement('a');
+          link.href = `${process.env.PUBLIC_URL}/assets/ILYASS_AGNAOU-RESUME-ENG.pdf`;
+          link.download = 'Ilyass_Agnaou_Resume.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }}
         className="btn btn-primary"
       >
         <i className="fas fa-download"></i> Download Full Resume (PDF)
-      </a>
+      </button>
     </div>
   </section>
 );
