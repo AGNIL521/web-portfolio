@@ -75,8 +75,8 @@ const Hero = () => {
             
             <div className="hero__cta-container">
               <a 
-                href="/assets/resume.pdf" 
-                className="btn btn--primary hero__cta" 
+                href="/assets/ILYASS_AGNAOU-RESUME-ENG.pdf" 
+                className="hero__cta btn--primary" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -84,12 +84,20 @@ const Hero = () => {
                 <span>View Resume</span>
               </a>
               <a 
-                href="/assets/resume.pdf" 
-                className="btn btn--outline hero__cta"
-                download
+                href="/assets/ILYASS_AGNAOU-RESUME-ENG.pdf" 
+                className="hero__cta btn--outline"
+                download="Ilyass_Agnaou_Resume.pdf"
               >
                 <FiDownload className="hero__cta-icon" />
                 <span>Download CV</span>
+              </a>
+              <a 
+                href="/assets/Edit Profile - Credly.pdf" 
+                className="hero__cta btn--outline"
+                download="Ilyass_Agnaou_Credly_Certificates.pdf"
+              >
+                <FiDownload className="hero__cta-icon" />
+                <span>Certificates</span>
               </a>
             </div>
             

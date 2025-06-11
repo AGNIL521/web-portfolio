@@ -5,13 +5,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 0 6rem;
+  padding: 6rem 1rem 4rem;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   color: var(--text-primary);
   isolation: isolate; /* Creates a new stacking context */
   scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 8rem 2rem 6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 8rem 0 6rem;
+  }
 }
 
 /* Ensure content is properly spaced on all devices */
@@ -266,18 +278,13 @@
   gap: 0.25rem;
 }
 
-.hero__cta {
+.hero__cta-container {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
   flex-wrap: wrap;
-  justify-content: center; /* Center buttons on mobile */
-}
-
-@media (min-width: 576px) {
-  .hero__cta {
-    justify-content: flex-start; /* Align left on larger screens */
-  }
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .hero__cta {
@@ -295,11 +302,55 @@
   background: #005fcc;
 }
 
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
+@media (max-width: 767px) {
   .hero__content {
-    padding: 0 0.5rem;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .hero__subtitle {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero__divider {
+    display: none;
+  }
+  
+  .hero__description {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .hero__social {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .hero__profile-cyber {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+/* Adjust profile image size on very small devices */
+@media (max-width: 400px) {
+  .hero__profile-cyber {
+    max-width: 240px;
+  }
+  
+  .hero__title {
+    font-size: 2.2rem;
+  }
+  
+  .hero__cta {
+    width: 100%;
   }
 }

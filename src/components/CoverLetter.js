@@ -7,52 +7,62 @@ const CoverLetter = () => {
   
   // Sample job description - replace with actual job details
   const jobDescription = `
-  Position: Junior Cybersecurity Analyst
-  Company: TechSecure Solutions
-  
-  About the Role:
-  We are seeking a passionate Junior Cybersecurity Analyst to join our team. You will be responsible for monitoring security access, conducting security assessments, and implementing security measures to protect our systems and data.
-  
-  Key Responsibilities:
-  - Monitor security access and perform security assessments
-  - Analyze security breaches to identify the root cause
-  - Implement and maintain security protocols and procedures
-  - Stay up-to-date with the latest security trends and technologies
-  - Respond to security incidents and provide post-incident analysis
-  
-  Requirements:
-  - Bachelor's degree in Computer Science or related field
-  - Knowledge of cybersecurity frameworks and risk management
-  - Familiarity with security technologies and tools
-  - Strong problem-solving and analytical skills
-  `;
+  About the Job (PwC SOC Analyst N1)
+La cybersécurité chez PwC, c’est avant tout une aventure. Celle d’une équipe qui se construit depuis plus de dix ans, sur la base d'une légitimité acquise par un effort constant sur la compétence et la pertinence (qu’elle soit technologique ou non), sur une force de frappe à l’international...
+
+Key Responsibilities:
+
+Monitor and analyze real-time security alerts
+Investigate suspicious activity and anomalies
+Analyze logs from multiple sources
+Document findings thoroughly
+Record incident-related artifacts in client tracking systems
+
+Profile Sought:
+
+Bac +3 in Cybersecurity or related field
+Minimum 1 year experience
+Experience with SIEM tools (Sentinel, Splunk), EDR (Microsoft Defender, TrendMicro), NIDS, HIDS, SOAR
+Knowledge of OS environments (Windows, macOS, Linux)
+Networking knowledge (TCP, UDP, ICMP, BGP, MPLS)
+Strong written and verbal communication skills
+Fluency in English (written and spoken)
+
+Certifications Preferred:
+
+GIAC Certified Incident Handler (GCIH)
+EC-Council’s Certified Incident Handler (ECIH)
+Microsoft SC-200
+`;
 
   // Sample cover letter - replace with your actual cover letter
   const coverLetter = `
-  [Your Name]
-  [Your Address]
-  [City, State, ZIP Code]
-  [Your Email]
-  [Your Phone Number]
-  [Date]
+  Ilyass Agnaou
+  88 avenue lalla asmae
+  Sale, Morocco
+  agnaouilyas4@gmail.com
+  +212 649 506 084
   
-  Hiring Manager
-  TechSecure Solutions
-  [Company Address]
-  [City, State, ZIP Code]
   
   Dear Hiring Manager,
-  
-  I am excited to apply for the Junior Cybersecurity Analyst position at TechSecure Solutions. With a strong foundation in cybersecurity principles and hands-on experience in security analysis, I am eager to contribute to your team's mission of protecting critical systems and data.
-  
-  In my academic journey, I have developed expertise in network security, vulnerability assessment, and incident response. My participation in cybersecurity competitions and hands-on projects has honed my ability to identify and mitigate security threats effectively.
-  
-  I am particularly drawn to TechSecure Solutions' commitment to innovation in cybersecurity. I am excited about the opportunity to work with your team and contribute my skills in threat analysis and security implementation.
-  
-  I would welcome the opportunity to discuss how my background and skills align with your needs. Thank you for your time and consideration. I look forward to the possibility of contributing to your team.
-  
-  Sincerely,
-  [Your Name]
+I am writing to express my strong interest in the SOC Analyst Level 1 position at PwC au Maroc . As a student specializing in Cybersecurity and Digital Trust at ENSET, with hands-on experience in intrusion detection and network hardening, I am eager to contribute to your team’s mission of safeguarding digital infrastructures.
+During my recent internship at DGAPR , I developed and implemented a real-time Intrusion Detection System (IDS) that monitored and analyzed network traffic for threats. This experience gave me practical exposure to threat detection, log analysis, and documentation of security events — all core components of a SOC analyst’s responsibilities.
+I bring solid technical knowledge in:
+SIEM tools : I’ve worked with Python-based logging frameworks and explored Splunk through personal projects.
+Network Protocols : I understand TCP/IP, ICMP, DNS , and other foundational protocols critical for detecting malicious behavior.
+Operating Systems : Proficient in Linux , with familiarity in Windows environments.
+Tools : Experienced with Wireshark , Docker , Git , and Scapy for network scanning and packet analysis.
+Additionally, I am currently preparing for the Microsoft SC-200 certification , and I am committed to continuing my professional development by obtaining GCIH or ECIH credentials to strengthen my incident handling capabilities.
+What excites me most about PwC is its reputation as a leader in cybersecurity innovation and its commitment to building a collaborative, learning-driven culture. I would be honored to join such a forward-thinking team and contribute to protecting clients’ digital assets around the clock.
+Thank you for considering my application. I look forward to the opportunity to further discuss how my background and enthusiasm align with the needs of your SOC team.
+Sincerely,
+
+Ilyass Agnaou
+ Email: agnaouilyas4@gmail.com
+ Phone: +212 649 605 084
+LinkedIn: linkedin.com/in/ilyass-agnaou
+ GitHub: github.com/ilyassagnaou
+
   `;
 
   return (

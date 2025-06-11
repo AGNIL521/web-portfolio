@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
 import CoverLetter from './components/CoverLetter';
+import Networking from './components/Networking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -23,6 +24,7 @@ function App() {
         <Certifications />
         <Achievements />
         <CoverLetter />
+        <Networking />
         <Contact />
       </main>
       <Footer />
