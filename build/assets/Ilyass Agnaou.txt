@@ -1,0 +1,77 @@
+Ilyass Agnaou 
+[LinkedIn] | [GitHub] | [Email] | [Portfolio Website (optional)]   
+Professional Summary  
+
+Highly motivated and detail-oriented IT professional with a strong foundation in cybersecurity, system administration, artificial intelligence, and emerging technologies. Proven ability to learn quickly and apply knowledge to real-world challenges. Seeking opportunities to leverage technical expertise and continuous learning in a dynamic and innovative environment. 
+Certifications & Badges  
+IT & Cybersecurity  
+
+    CyberOps Associate , Cisco (Issued 6/2/25)  
+    Red Hat System Administration I (RH124-RHA) , Red Hat (Ver. 9.3, Issued 4/6/25)  
+    Red Hat System Administration II (RH134-RHA) , Red Hat (Ver. 9.3, Issued 4/8/25)  
+    Security Operations Center in Practice , IBM (Issued 4/7/25)  
+    Cybersecurity Fundamentals , IBM SkillsBuild (Issued 5/3/25)  
+    English for IT 1 & 2 , Cisco (Issued 12/20/24 & 6/8/25)
+     
+
+Artificial Intelligence & Machine Learning  
+
+    Artificial Intelligence Fundamentals , IBM SkillsBuild (Issued 4/7/25)  
+    Deep Learning , Future Proof (Tagged Skill)  
+    Machine Learning (ML) , Future Proof (Tagged Skill)  
+    Natural Language Processing (NLP) , Future Proof (Tagged Skill)  
+    Computer Vision , Future Proof (Tagged Skill)
+     
+
+Blockchain & Emerging Technologies  
+
+    LFS170: Blockchain – Understanding Its Uses and Applications , The Linux Foundation (Issued 5/24/25)  
+    Blockchain , Future Proof (Tagged Skill)  
+    Ansible , Future Proof (Tagged Skill)
+     
+
+Other Technical Certifications  
+
+    Getting Started with Threat Intelligence and Hunting , IBM (Issued 4/7/25)  
+    Linux , Future Proof (Tagged Skill)  
+    Red Hat Enterprise Linux (RHEL) , Future Proof (Tagged Skill)
+     
+
+Technical Skills  
+
+    Operating Systems : Linux (Red Hat), Windows  
+    Programming / Scripting : Bash, Python (implied through ML/AI work)  
+    Networking & Security : Network Security, Cloud Security, SIEM, Incident Response, Vulnerability Management, Malware Analysis  
+    AI & ML Tools : AI Ethics, Deep Learning, NLP, Computer Vision, Chatbots  
+    Tools & Platforms : Ansible, IBM Watson Knowledge Studio (WKS), IBM System I, Threat Intelligence Tools  
+    Soft Skills : Problem Solving, Design Thinking, Empathy, Stakeholder Management, Communication
+     
+
+Areas of Expertise  
+
+    Cybersecurity Strategy & Implementation  
+    System Administration (Red Hat Linux)  
+    Threat Detection & Response  
+    Artificial Intelligence & Machine Learning Foundations  
+    Blockchain Concepts & Applications  
+    Information Security Policy & Governance  
+    Emerging Technologies & Digital Transformation
+     
+
+Education & Professional Development  
+
+    Ongoing Learner at Credly  – Expanding knowledge in AI, cybersecurity, and cloud computing through verified badges and skill development.
+    IBM SkillsBuild  – Completed foundational courses in AI, cybersecurity, and threat intelligence.
+    Cisco Certifications  – Developed practical IT communication and operational skills through English for IT and CyberOps programs.
+     
+
+Languages  
+
+    English : Proficient (Technical & Business)
+    French : Native or Bilingual (Assumed based on name and common language regions)
+     
+
+Additional Information  
+
+    Public Profile : https://www.credly.com/users/ilyas-agna...    
+    Continuous Learner : Committed to staying current with industry trends and expanding technical and soft skills.
