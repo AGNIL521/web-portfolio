@@ -45,7 +45,13 @@ const events = [
     description: 'Continued involvement in organizing one of the largest student-led events in engineering, promoting innovation, leadership, and collaboration among participants.',
     date: '2025',
     tags: ['Event Planning', 'Leadership']
-  }
+  },
+  {
+    title: 'Participant — GITEX 2025',
+    description: 'Participated in this leading technology event.',
+    date: '2025',
+    tags: ['Event Planning', 'Teamwork']
+  },
 ];
 
 const AchievementCard = ({ item, index, icon: Icon, accentColor }) => {

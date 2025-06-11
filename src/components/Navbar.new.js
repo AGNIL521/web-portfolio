@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaTerminal } from 'react-icons/fa';
+import { FaBars, FaTerminal } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 import '../styles/Navbar.css';
 
