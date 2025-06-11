@@ -75,29 +75,26 @@ const Hero = () => {
             
             <div className="hero__cta-container">
               <a 
-                  href={`${process.env.PUBLIC_URL}/assets/ILYASS_AGNAOU-RESUME-ENG.pdf`}
-                  download="ILYASS_AGNAOU-RESUME-ENG.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
+                href="/web-portfolio/assets/ILYASS_AGNAOU-RESUME-ENG.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
               >
                 <FiFileText className="hero__cta-icon" />
                 <span>View Resume</span>
               </a>
               <a 
-  href={`${process.env.PUBLIC_URL}/assets/ILYASS_AGNAOU-RESUME-ENG.pdf`}
-  download="ILYASS_AGNAOU-RESUME-ENG.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn btn-primary"
+                href="/web-portfolio/assets/ILYASS_AGNAOU-RESUME-ENG.pdf"
+                download="Ilyass_Agnaou_Resume.pdf"
+                className="btn btn-primary"
               >
                 <FiDownload className="hero__cta-icon" />
                 <span>Download CV</span>
               </a>
               <a 
-                href={`${process.env.PUBLIC_URL}/assets/Edit Profile - Credly.pdf`} 
-                className="hero__cta btn--outline"
-                download="edit-profile-credly.pdf"
+                href="/web-portfolio/assets/Edit%20Profile%20-%20Credly.pdf"
+                download="Ilyass_Agnaou_Credly_Certificates.pdf"
+                className="btn btn--outline"
               >
                 <FiDownload className="hero__cta-icon" />
                 <span>Certificates</span>

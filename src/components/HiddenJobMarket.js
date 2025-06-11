@@ -18,7 +18,7 @@ const HiddenJobMarket = () => {
               <h3>Leverage LinkedIn</h3>
               <p>Optimize your profile with cybersecurity keywords and engage with industry content to increase visibility.</p>
               <a 
-                href="https://linkedin.com/in/yourprofile" 
+                href="https://linkedin.com/in/ilyass-agnaou" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-outline"

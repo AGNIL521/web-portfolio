@@ -65,8 +65,8 @@ const Resume = () => (
     </div>
     <div className="resume__actions">
       <a 
-        href={`${process.env.PUBLIC_URL}/assets/ILYASS_AGNAOU-RESUME-ENG.pdf`}
-        download="ILYASS_AGNAOU-RESUME-ENG.pdf"
+        href="/web-portfolio/assets/ILYASS_AGNAOU-RESUME-ENG.pdf"
+        download="Ilyass_Agnaou_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="btn btn-primary"
