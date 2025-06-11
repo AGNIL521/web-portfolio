@@ -66,63 +66,87 @@ LinkedIn: linkedin.com/in/ilyass-agnaou
   `;
 
   return (
-    <section className="cover-letter section" id="cover-letter">
+    <section id="cover-letter" className="cover-letter-section">
       <div className="container">
-        <div className="section__header">
-          <h2 className="section__title">
-            <span className="text-gradient">Cover Letter</span> & Job Application
-          </h2>
-          <p className="section__subtitle">
-            My application materials for the position I'm pursuing
-          </p>
-        </div>
-
-        <div className="cover-letter__tabs">
+        <h2 className="section-title">Cover Letter & Job Application</h2>
+        <div className="cover-letter-tabs">
           <button 
-            className={`cover-letter__tab ${activeTab === 'cover' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cover')}
+            className={`tab-btn ${activeTab === 'cover-letter' ? 'active' : ''}`}
+            onClick={() => setActiveTab('cover-letter')}
           >
-            <FaFileAlt className="tab-icon" /> Cover Letter
+            Cover Letter
           </button>
           <button 
-            className={`cover-letter__tab ${activeTab === 'job' ? 'active' : ''}`}
-            onClick={() => setActiveTab('job')}
+            className={`tab-btn ${activeTab === 'job-description' ? 'active' : ''}`}
+            onClick={() => setActiveTab('job-description')}
           >
-            <FaBriefcase className="tab-icon" /> Job Description
+            Job Description
           </button>
-          <a 
-            href="/path-to-your-resume.pdf" 
-            className="cover-letter__tab download-btn"
-            download
-          >
-            <FaDownload className="tab-icon" /> Download PDF
-          </a>
         </div>
-
-        <div className="cover-letter__content">
-          {activeTab === 'cover' ? (
-            <div className="cover-letter__text">
-              <h3>Cover Letter</h3>
-              <div className="content-box">
-                <pre>{coverLetter}</pre>
+        
+        <div className="cover-letter-content">
+          {activeTab === 'cover-letter' ? (
+            <div className="cover-letter">
+              <div className="cover-letter-text">
+                {coverLetter.split('\n').map((line, index) => (
+                  <p key={index} className="cover-letter-line">
+                    {line || <br />}
+                  </p>
+                ))}
+              </div>
+              <div className="cover-letter-actions">
+                <a 
+                  href="#" 
+                  className="btn btn-primary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.print();
+                  }}
+                >
+                  Print or Save as PDF
+                </a>
+                <a 
+                  href="#" 
+                  className="btn btn-outline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const blob = new Blob([coverLetter], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Ilyass_Agnaou_Cover_Letter.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                  }}
+                >
+                  Download as TXT
+                </a>
               </div>
             </div>
           ) : (
             <div className="job-description">
-              <h3>Job Description</h3>
-              <div className="content-box">
-                <pre>{jobDescription}</pre>
+              <div className="job-description-text">
+                {jobDescription.split('\n').map((line, index) => (
+                  <p key={index} className={line.trim() === '' ? 'job-line-spacing' : ''}>
+                    {line || <br />}
+                  </p>
+                ))}
               </div>
-              <div className="apply-actions">
+              <div className="job-actions">
                 <a 
-                  href="#" 
+                  href="mailto:recruitment@example.com?subject=Application for SOC Analyst N1 Position" 
                   className="btn btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Apply Now <FaExternalLinkAlt className="icon-right" />
                 </a>
-                <button className="btn btn-outline">
+                <button 
+                  className="btn btn-outline"
+                  onClick={() => {
+                    // Save job to localStorage or implement your save functionality
+                    alert('Job saved for later!');
+                  }}
+                >
                   Save for Later
                 </button>
               </div>
