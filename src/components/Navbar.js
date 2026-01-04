@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaTerminal } from 'react-icons/fa';
+import { FaTerminal, FaShareAlt } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 import '../styles/Navbar.css';
+import '../styles/NavbarShare.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [showShareTooltip, setShowShareTooltip] = useState(false);
   const navbarRef = useRef(null);
   const menuButtonRef = useRef(null);
 
@@ -16,7 +18,7 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'resume', 'projects', 'certifications', 'achievements', 'cover-letter', 'hidden-job-market', 'contact'];
+      const sections = ['home', 'about', 'resume', 'projects', 'certifications', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -70,10 +72,14 @@ const Navbar = () => {
     { id: 'projects', label: 'Projects' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'achievements', label: 'Achievements' },
-    { id: 'cover-letter', label: 'Cover Letter' },
-    { id: 'hidden-job-market', label: 'Hidden Job Market' },
     { id: 'contact', label: 'Contact' },
   ];
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(window.location.origin);
+    setShowShareTooltip(true);
+    setTimeout(() => setShowShareTooltip(false), 2000);
+  };
 
   return (
     <nav 
@@ -98,6 +104,17 @@ const Navbar = () => {
           <span className="navbar__cursor">_</span>
         </Link>
         
+        <div className="navbar__share-container">
+           <button 
+            className="navbar__share-btn"
+            onClick={copyToClipboard}
+            aria-label="Share Portfolio"
+            title="Copy Link"
+           >
+             <FaShareAlt />
+           </button>
+           {showShareTooltip && <span className="navbar__share-tooltip">Link Copied!</span>}
+        </div>
         <button 
           ref={menuButtonRef}
           className={`navbar__mobile-toggle ${isMobileMenuOpen ? 'navbar__mobile-toggle--open' : ''}`}

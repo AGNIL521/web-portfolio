@@ -5,8 +5,6 @@ import Resume from './components/Resume';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
-import CoverLetter from './components/CoverLetter';
-import HiddenJobMarket from './components/HiddenJobMarket';
 import Networking from './components/Networking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -24,8 +22,6 @@ function App() {
         <Projects />
         <Certifications />
         <Achievements />
-        <CoverLetter />
-        <HiddenJobMarket />
         <Networking />
         <Contact />
       </main>

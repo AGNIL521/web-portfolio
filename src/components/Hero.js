@@ -63,9 +63,7 @@ const Hero = () => {
             </h1>
             
             <h2 className="hero__subtitle">
-              <span className="hero__role">Cybersecurity Engineer</span>
-              <span className="hero__divider">/</span>
-              <span className="hero__role">Digital Trust Specialist</span>
+              <span className="hero__role">Engineering Student in Cybersecurity and Digital Trust</span>
             </h2>
             
             <p className="hero__description">
@@ -75,7 +73,7 @@ const Hero = () => {
             
             <div className="hero__cta-container">
               <a 
-                href="/web-portfolio/assets/ILYASS_AGNAOU-RESUME-ENG.pdf"
+                href="/web-portfolio/assets/ILYASS_AGNAOU_RESUME_ENG.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -84,7 +82,7 @@ const Hero = () => {
                 <span>View Resume</span>
               </a>
               <a 
-                href="/web-portfolio/assets/ILYASS_AGNAOU-RESUME-ENG.pdf"
+                href="/web-portfolio/assets/ILYASS_AGNAOU_RESUME_ENG.pdf"
                 download="Ilyass_Agnaou_Resume.pdf"
                 className="btn btn-primary"
               >

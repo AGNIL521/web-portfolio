@@ -3,17 +3,31 @@ import '../styles/Projects.css';
 
 const projects = [
   {
-    title: 'BLADE: Insider Threat Behavior Analysis',
-    description: 'A web application for managing security logs, enabling real-time Insider Threat Behavior Analysis and Prediction based on Linux system logs. Uses Jupyter Notebooks, Python, and Streamlit to ingest, visualize, and classify log entries—helping security teams detect suspicious activity swiftly.',
+    title: 'BLADE (Security Log Management)',
+    description: 'Real-time analysis and prediction of risky internal behaviors using Linux system logs (Python, Streamlit, Jupyter).',
     technologies: ['Python', 'Streamlit', 'Jupyter', 'Linux'],
     link: '',
     image: '',
   },
   {
     title: 'Penetration Testing Tool',
-    description: 'Created a tool using Python and Scapy to automate network scanning and vulnerability detection.',
+    description: 'Automated tool for network scanning and vulnerability detection using Python/Scapy.',
     technologies: ['Python', 'Scapy'],
     link: '',
+    image: '',
+  },
+  {
+    title: 'Defensive Cybersecurity Lab',
+    description: 'Segmented network environment using pfSense and TinyCore Linux for defense simulation.',
+    technologies: ['pfSense', 'TinyCore Linux', 'Network Security'],
+    link: '',
+    image: '',
+  },
+  {
+    title: 'ShieldAI',
+    description: 'Understanding and Defending Against Adversarial Threats in Cybersecurity.',
+    technologies: ['Python', 'AI/ML', 'Cybersecurity'],
+    link: 'https://github.com/AGNIL521/ShieldAI',
     image: '',
   },
 ];
