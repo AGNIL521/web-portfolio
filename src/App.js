@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import './styles/global.css';
 
 function App() {
+  // Last updated: 2026-01-04 - Force Deploy
   return (
     <div className="App">
       <Navbar />
